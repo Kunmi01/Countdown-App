@@ -1,4 +1,4 @@
-# Countdown-App
+# Promo-Countdown-App
 
 ## Project Setup
 

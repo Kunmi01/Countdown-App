@@ -49,17 +49,20 @@ const App = ({ apiUrl }) => {
     return false;
   };
 
+  const getJsonData = async () => {
+    try {
+      const jsonData = await (await fetch(apiUrl)).json();
+      return jsonData;
+    } catch (err) {
+      setErrorMessages([...errorMessages, err.message]);
+      return null;
+    }
+  };
+
   const initializeCountdown = async () => {
     const storedData = loadPromoData();
     const storedEndDate = loadPromoEndDate();
-    let jsonData;
-
-    try {
-      jsonData = await (await fetch(apiUrl)).json();
-    } catch (err) {
-      setErrorMessages([...errorMessages, err.message]);
-      return;
-    }
+    const jsonData = await getJsonData();
 
     if (storedData && storedData.id === jsonData.id && storedEndDate) {
       const getMsLeft = () => storedEndDate - Date.now();
