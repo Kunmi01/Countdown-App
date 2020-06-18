@@ -1,0 +1,91 @@
+@import './scss/base.scss';
+
+/***** CSS Reset START *****/
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+b,
+a,
+img,
+strike,
+strong,
+sub,
+sup,
+ol,
+ul,
+li,
+form,
+label,
+legend,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/***** CSS Reset END *****/
+
+/***** Typography START *****/
+@include font-face(
+  $name: 'PlayRegular',
+  $filepath: './assets/fonts/play-regular/play-regular'
+);
+
+@include font-face(
+  $name: 'PlayBold',
+  $filepath: './assets/fonts/play-bold/play-bold'
+);
+
+b {
+  font-family: $font-play-bold;
+}
+
+h1 {
+  font-size: $font-xxxl;
+}
+
+h2 {
+  font-size: $font-xxl;
+}
+
+h3 {
+  font-size: $font-xl;
+}
+
+h4 {
+  font-size: $font-l;
+}
+/***** Typography END *****/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: $background-light url('./assets/images/bg.jpg') no-repeat center /
+    cover;
+  font-family: $font-play-regular;
+  font-size: $font-m;
+  color: $text-dark;
+  line-height: 1;
+
+  @include sd-retina {
+    background-image: url('./assets/images/bg-2x.jpg');
+  }
+}

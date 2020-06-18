@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Countdown renders Countdown component 1`] = `
+<Countdown
+  duration={43685000}
+>
+  <div
+    className="countdown"
+  >
+    <div
+      className="countdown__unit countdown__unit--hours"
+    >
+      <h1>
+        12
+      </h1>
+      <p>
+        Hours
+      </p>
+    </div>
+    <h1
+      className="countdown__separator"
+    >
+      :
+    </h1>
+    <div
+      className="countdown__unit countdown__unit--minutes"
+    >
+      <h1>
+        08
+      </h1>
+      <p>
+        Minutes
+      </p>
+    </div>
+    <h1
+      className="countdown__separator"
+    >
+      :
+    </h1>
+    <div
+      className="countdown__unit countdown__unit--seconds"
+    >
+      <h1>
+        05
+      </h1>
+      <p>
+        Seconds
+      </p>
+    </div>
+  </div>
+</Countdown>
+`;

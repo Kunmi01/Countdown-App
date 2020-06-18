@@ -1,0 +1,30 @@
+@import '../../scss/base.scss';
+
+$UNIT_VALUE_SIZE_DESKTOP: 120px;
+$SEPARATOR_SIZE_DESKTOP: 100px;
+
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &__unit {
+    text-align: center;
+    h1 {
+      font-family: $font-play-bold;
+      font-size: $font-xxxl;
+
+      @include bp-from('mobile') {
+        font-size: $UNIT_VALUE_SIZE_DESKTOP;
+      }
+    }
+  }
+
+  &__separator {
+    font-size: $font-xxl;
+
+    @include bp-from('mobile') {
+      font-size: $SEPARATOR_SIZE_DESKTOP;
+    }
+  }
+}

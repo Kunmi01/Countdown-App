@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders App component 1`] = `
+<div
+  className="app"
+>
+  <div
+    className="app__wrapper"
+  >
+    <div
+      className="app__countdown-wrapper"
+    >
+      <Countdown
+        duration={0}
+      />
+    </div>
+  </div>
+</div>
+`;

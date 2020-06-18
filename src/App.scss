@@ -1,0 +1,67 @@
+@import './scss/base.scss';
+
+$TOP_IMAGE_MAX_WIDTH: 500px;
+$COUNTDOWN_MAX_WIDTH: 750px;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $white;
+  min-height: 100vh;
+
+  &__error-message {
+    background: rgba($color: $black, $alpha: 0.8);
+    color: $red;
+    padding: $unit * 2;
+  }
+
+  &__wrapper {
+    @include component-wrapper;
+    text-align: center;
+  }
+
+  &__image-wrapper {
+    max-width: $TOP_IMAGE_MAX_WIDTH;
+    margin: 0 auto $unit * 8;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__message {
+    margin-bottom: $unit * 5;
+
+    @include bp-from('mobile') {
+      font-size: $font-xxl;
+    }
+  }
+
+  &__countdown-wrapper {
+    max-width: $COUNTDOWN_MAX_WIDTH;
+    margin: 0 auto;
+  }
+
+  &__opt-in-button {
+    display: block;
+    border: 2px solid $neon-green;
+    border-radius: $unit;
+    box-shadow: inset 0 0 10px $deep-green, 0 0 10px $deep-green;
+    background: rgba($color: $black, $alpha: 0.5);
+    font-family: $font-play-bold;
+    font-size: $font-l;
+    color: $white;
+    text-decoration: none;
+    width: 100%;
+    opacity: 0.88;
+    padding: $unit * 4;
+    margin-top: $unit * 10;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
