@@ -8,6 +8,7 @@ import {
   savePromoEndDate,
   loadPromoEndDate
 } from './utils/localStorage';
+import getDataValidationErrors from './utils/dataValidator';
 
 import Countdown from './components/Countdown';
 import topImage from './assets/images/top-image.png';
@@ -22,20 +23,10 @@ const App = ({ apiUrl }) => {
   const [countdownInterval, setCountdownInterval] = useState();
   const [errorMessages, setErrorMessages] = useState([]);
 
-  const isDataValid = ({ duration, cashValue, optInUrl }) => {
-    const errors = [];
-    if (!duration || typeof duration !== 'number') {
-      errors.push('Missing or invalid duration value');
-    }
-    if (!cashValue) {
-      errors.push('Missing cash value');
-    }
-    if (!optInUrl) {
-      errors.push('Missing opt in url');
-    }
-
-    setErrorMessages([...errorMessages, ...errors]);
-    return !errors.length;
+  const isDataValid = data => {
+    const validationErrors = getDataValidationErrors(data);
+    setErrorMessages([...errorMessages, ...validationErrors]);
+    return !validationErrors.length;
   };
 
   const hasLocalStorage = () => {
