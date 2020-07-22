@@ -50,6 +50,25 @@ const App = ({ apiUrl }) => {
     }
   };
 
+  // const updateJsonData = async () => {
+  //   const data = {
+  //     id: 3,
+  //     duration: 330000,
+  //     cashValue: 50,
+  //     optInUrl: 'https://www.starspins.com/'
+  //   };
+
+  //   try {
+  //     fetch('http://localhost:4000/test', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify(data)
+  //     });
+  //   } catch (err) {
+  //     console.log(err.message);
+  //   }
+  // };
+
   const initializeCountdown = async () => {
     const storedData = loadPromoData();
     const storedEndDate = loadPromoEndDate();
